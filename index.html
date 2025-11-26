@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlugID Converter</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SlugID Converter</h1>
+    <p class="description">
+      Convert between UUIDs and URL-safe base64 slugs using 
+      <a href="https://github.com/taskcluster/slugid" target="_blank" rel="noopener noreferrer">taskcluster/slugid</a>
+    </p>
+
+    <div class="converter-section">
+      <h2>UUID to SlugID</h2>
+      <div class="input-group">
+        <label for="uuid-input">UUID:</label>
+        <input type="text" id="uuid-input" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+      </div>
+      <button id="encode-btn" class="btn">Encode →</button>
+      <div class="input-group">
+        <label for="slug-output">SlugID:</label>
+        <input type="text" id="slug-output" readonly>
+      </div>
+    </div>
+
+    <div class="converter-section">
+      <h2>SlugID to UUID</h2>
+      <div class="input-group">
+        <label for="slug-input">SlugID:</label>
+        <input type="text" id="slug-input" placeholder="22 character slug">
+      </div>
+      <button id="decode-btn" class="btn">Decode →</button>
+      <div class="input-group">
+        <label for="uuid-output">UUID:</label>
+        <input type="text" id="uuid-output" readonly>
+      </div>
+    </div>
+
+    <div class="converter-section">
+      <h2>Generate New SlugID</h2>
+      <div class="button-group">
+        <button id="generate-v4-btn" class="btn btn-secondary">Generate v4</button>
+        <button id="generate-nice-btn" class="btn btn-secondary">Generate Nice</button>
+      </div>
+      <div class="generated-result" id="generated-result">
+        <div class="input-group">
+          <label for="generated-slug">SlugID:</label>
+          <input type="text" id="generated-slug" readonly>
+        </div>
+        <div class="input-group">
+          <label for="generated-uuid">UUID:</label>
+          <input type="text" id="generated-uuid" readonly>
+        </div>
+      </div>
+    </div>
+
+    <div id="error-message" class="error-message"></div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
